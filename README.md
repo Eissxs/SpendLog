@@ -112,6 +112,14 @@ No backend is used — all logic runs locally via `UNUserNotificationCenter`.
 
 ---
 
+## Documentation
+
+- [📱 UI Flow Diagram](docs/UI_Flow_Diagram.png) **Not 100% accurate, made using Eraser AI.**
+- [🧱 Architecture Overview](docs/Architecture_Overview.png)
+- [🛠️ Dev Setup Notes](docs/DEV_SETUP.md)
+
+---
+
 ## 🧑‍💻 Author
 
 Created by **Eissxs** — Not Cowboy, Not Guru.
