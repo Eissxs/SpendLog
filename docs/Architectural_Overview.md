@@ -10,58 +10,54 @@ SpendLog is built using the MVVM (Model-View-ViewModel) architecture pattern to 
 
 ---
 
-### 🧩 Components
+### 🧩 Component Breakdown
 
 #### Models (`Models/`)
-- **Expense.swift** – Represents a single spending item.
-- **Category.swift** – Enum and metadata for spending categories.
-- **Goal.swift** – Represents user-defined spending goals.
+- **Expense.swift** – Defines the data model for a spending entry, including amount, category, and date. Conforms to `Codable` for local persistence.
 
 #### ViewModels (`ViewModels/`)
-- **ExpenseViewModel.swift** – Handles logic for adding, listing, and deleting expenses.
-- **GoalViewModel.swift** – Manages saving goals, goal progress, and validations.
+- **ExpenseViewModel.swift** – Contains logic for managing the list of expenses, computing totals, filtering by category/date, and storing data in `UserDefaults`.
 
 #### Views (`Views/`)
-- **HomeView.swift** – Dashboard with current totals, streak chart, and add button.
-- **AddExpenseView.swift** – Form UI for logging a new expense.
-- **ExpenseHistoryView.swift** – Shows past spending records with edit/delete options.
-
-#### Charts (`Charts/`)
-- **SpendingPieChartView.swift** – Pie chart displaying spending by category.
-- **StreakBarChartView.swift** – Visual bar chart showing spending streaks or consistency.
+- **HomeView.swift** – Dashboard showing total spend, pie chart, recent expenses, and navigation to add/edit views.
+- **AddExpenseView.swift** – Form view for adding a new expense, with input validation and category selection.
+- **EditExpenseView.swift** – Similar to `AddExpenseView`, but pre-filled for editing existing entries.
+- **SpendingPieChartView.swift** – Displays a pie chart of expenses by category using Swift Charts.
+- **SpendingSummaryView.swift** – Shows high-level spending insights (monthly total, biggest day, etc.).
+- **CategoryManager.swift** – UI for managing category display or assignment (future-proofed).
+- **SplashView.swift** – Optional animated splash screen to enhance app branding.
 
 #### Resources (`Resources/`)
-- **CategoryColor.swift** – Central file for defining UI colors per category.
-- **Constants.swift** – Stores shared string and value constants.
-- **Assets.xcassets** – Holds app icons, UI colors, and design assets.
+- **Colors.swift** – Centralized color definitions for categories and themes.
 
-#### Supporting Utilities (`Supporting/`)
-- **DateUtils.swift** – Handles date comparisons, formatting, and resets.
-- **NotificationManager.swift** – Manages daily reminder scheduling.
+- **Assets.xcassets** – Contains color sets, icons, and launch images.
 
 ---
 
-### 💾 Data Persistence
+### 💾 Data Handling & Persistence
 
-- **UserDefaults** is used for prototyping purposes to persist expense and goal data locally.
-- All models conform to `Codable` for easy encoding/decoding to JSON.
-- Consider migrating to **CoreData** or **Realm** for production-level data integrity and querying.
+- **UserDefaults** is used for storing expense data and user preferences locally.
+- Data models are encoded/decoded using `Codable`.
+- The app is entirely offline-first and requires no backend connection.
+- For production apps, migrating to **Core Data** or **Realm** is recommended for richer querying and data relationships.
 
 ---
 
 ### ⚙️ Navigation Flow
 
-- `HomeView` → Add Expense → ExpenseHistory → Expense Details (optional editing)
-- Navigation uses `NavigationStack` and `@State` to manage transitions and data passing.
+<img width="229" alt="Screenshot 2025-05-07 at 3 52 18 PM" src="https://github.com/user-attachments/assets/6ebfedd3-072b-46cd-a794-5e1fa25c6591" />
+
+- Navigation is handled via `NavigationStack` and SwiftUI bindings.
+- Expense editing is initiated from lists in `HomeView` or `SpendingSummaryView`.
 
 ---
 
 ### 🧠 Architecture Summary
 
-- **MVVM** pattern ensures clean separation between UI and logic.
-- All business logic lives in ViewModels for testability and reuse.
-- Views remain declarative and driven by observed state changes.
+- Uses MVVM to keep business logic in `ExpenseViewModel`, allowing views to focus solely on UI.
+- Minimal coupling between views and models for better scalability.
+- Organized file structure for long-term maintenance and collaboration.
 
 ---
 
-Let me know if you’d like a diagram or flowchart version of this overview!
+Let me know if you'd like this converted into a visual diagram or embedded in your README!
