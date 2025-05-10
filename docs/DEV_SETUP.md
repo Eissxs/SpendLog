@@ -20,7 +20,7 @@ Welcome to the SpendLog iOS app! This guide provides instructions on how to set 
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/SpendLog.git
+git clone https://github.com/Eissxs/SpendLog.git
 cd SpendLog
 ```
 
