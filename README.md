@@ -72,7 +72,7 @@ This prototype demonstrates:
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/spendlog.git
+   git clone https://github.com/Eissxs/SpendLog.git
    ```
 
 2. Open `SpendLog.xcodeproj` in Xcode  
