@@ -1,36 +1,60 @@
-# 💸 SpendLog v1.0 (Prototype)  
+# **SpendLog v1.0**
+
+![Swift](https://img.shields.io/badge/Swift-5.0%2B-orange)
+![Platform](https://img.shields.io/badge/Platform-iOS%2016.0%2B-blue)
+![License](https://img.shields.io/badge/License-Apache--2.0-green)
+![Status](https://img.shields.io/badge/Status-Prototype-yellow)
+
 *ITEL315 – Elective iOS Development*
 
-**SpendLog** is a minimalist iOS prototype app built in **SwiftUI** to help users track daily expenses, visualize spending habits, and manage categories. It features a clean UI, analytics via pie/bar/line charts, and daily notifications—offering a mindful budgeting experience with zero backend.
+SpendLog is a minimalist iOS app built with SwiftUI that helps users track daily expenses, visualize spending habits, and manage budgets efficiently. With features like expense categorization, data visualization, and daily reminders, SpendLog makes financial tracking simple and intuitive.
 
 > **Note:** This is a **prototype-level project** designed for learning SwiftUI, exploring data persistence, and building personal finance visualizations.
 
----
-
 ## **Key Features**
 
-- **Daily Expense Tracker:** Add, edit, and delete expenses with categories and optional notes  
-- **Analytics Dashboard:**  
-  - Pie chart of spending by category  
-  - Bar and line charts for monthly and yearly overviews  
-  - Highlights the highest-spending day  
-- **Notifications:** Daily reminder to log expenses using local notifications  
-- **Splash Screen:** Animated launch screen with logo and subtle loader  
-- **Aesthetic Design:** Pastel tones and Zen-inspired minimalism  
-- **Persistence:** Uses `UserDefaults` for simple local storage and daily resets
+- **Expense Tracking**
+  - Add, edit, and delete expenses
+  - Categorize with custom categories
+  - Add notes and timestamps
+  - Track recurring expenses
+  - Daily and monthly summaries
 
----
+- **Data Visualization**
+  - Pie charts for category breakdown
+  - Bar charts for monthly comparison
+  - Line charts for spending trends
+  - Highlight highest-spending days
+  - Category-specific analytics
+
+- **Budget Management**
+  - Set daily and monthly budgets
+  - Progress indicators
+  - Overspending alerts
+  - Goal-setting capabilities
+  - Budget history and comparison
+
+- **User Experience**
+  - Clean, minimalist interface
+  - Pastel tone color scheme
+  - Intuitive gestures and animations
+  - Dark mode support
+  - Smart keyboard handling
+
+- **Notifications & Reminders**
+  - Daily expense logging reminders
+  - Budget threshold alerts
+  - Custom notification scheduling
+  - Notification preferences
 
 ## **Tech Stack**
 
-- **Swift**
-- **SwiftUI**
-- **Swift Charts**
-- **UserNotifications** – for daily reminders  
-- **UserDefaults** – for persistence  
-- **MVVM Pattern** – separation of concerns via ViewModels
-
----
+- **Framework:** SwiftUI
+- **Data Visualization:** Swift Charts
+- **Data Persistence:** UserDefaults (prototype)
+- **Architecture Pattern:** MVVM
+- **Notifications:** UserNotifications Framework
+- **Design:** SF Symbols, Custom Color Palette
 
 ## **App Screenshots**
 
@@ -53,73 +77,146 @@
   <img src="https://github.com/user-attachments/assets/88185a88-07d1-4804-9644-ef72d8aae06c" width="45%" />
 </div>
 
----
+## **Project Structure**
 
-## **Project Objectives**
+```
+SpendLog/
+├── Views/
+│   ├── DashboardView.swift
+│   ├── ExpenseListView.swift
+│   ├── AddExpenseView.swift
+│   ├── AnalyticsView.swift
+│   └── SettingsView.swift
+├── Models/
+│   ├── Expense.swift
+│   ├── Category.swift
+│   └── Budget.swift
+├── ViewModels/
+│   ├── ExpenseViewModel.swift
+│   ├── AnalyticsViewModel.swift
+│   └── BudgetViewModel.swift
+├── Utilities/
+│   ├── NotificationManager.swift
+│   └── PersistenceManager.swift
+└── Assets.xcassets/
+```
 
-This prototype demonstrates:
+## **Requirements**
 
-- Clean, mobile-first expense tracking using SwiftUI  
-- State persistence and daily resets using `UserDefaults`  
-- Visual analytics through Swift Charts (pie, bar, line)  
-- Splash screen animation with scaling effects  
-- Local notification scheduling with `UNUserNotificationCenter`  
-- Applying MVVM principles for better code organization
+- iOS 16.0+
+- Xcode 14.0+
+- Swift 5.0+
 
----
+## **Installation**
 
-## **Installation Instructions**
-
-1. Clone the repository:  
+1. Clone the repository:
    ```bash
    git clone https://github.com/Eissxs/SpendLog.git
    ```
 
-2. Open `SpendLog.xcodeproj` in Xcode  
-3. Run the app on a simulator or device (**iOS 16+ recommended**)
+2. Open `SpendLog.xcodeproj` in Xcode
 
----
+3. Build and run the project
 
-## Areas for Improvement (Toward Production Readiness)
+## **Features in Detail**
 
-### 1. File Organization
-- ViewModels and folders are in place, but logic can be further modularized  
-- Use a consistent folder structure: `Models/`, `ViewModels/`, `Resources/`  
-- Consider centralizing colors, typography, and styles in `Theme.swift` or `Assets`
+### Expense Tracking
+- Simple and intuitive expense entry
+- Custom category management
+- Optional notes and details
+- Daily, weekly, and monthly views
+- Search and filter capabilities
 
-### 2. State Management
-- Uses `@StateObject` and `UserDefaults` directly  
-- For advanced scaling, explore `CoreData` or shared services with `ObservableObject`  
-- Dependency injection would enhance testability and code reuse
+### Analytics & Visualization
+- Interactive pie charts for category distribution
+- Bar charts for monthly spending comparison
+- Line charts for trend analysis
+- Custom date range selection
+- Export options for reports
 
-### 3. Input Validation & Edge Cases
-- Minimal validation currently  
-- Add checks for negative/large values and handle malformed input  
-- Unit tests for calculation logic and filters would increase reliability
+### Budget Management
+- Set and track spending limits
+- Visual budget indicators
+- Alert thresholds for overspending
+- Budget history and projections
+- Category-specific budgets
 
-### 4. Localization & Strings
-- Most strings are hardcoded  
-- Use a `Constants.swift` or `Localizable.strings` to support localization and reduce duplication
+### User Experience
+- Minimalist Zen-inspired design
+- Smooth animations and transitions
+- Haptic feedback on actions
+- Customizable themes
+- Accessibility considerations
 
----
+## **Privacy Permissions**
 
-## Daily Reminder Setup
+The app requires the following permissions:
+- Notifications (for daily reminders)
+- FaceID/TouchID (optional, for securing the app)
 
-- The app sends one local notification per day to remind users to log expenses  
-- Notifications must be allowed on first launch  
-- All logic is local — no server or cloud integration
+## **Contributing**
 
----
+Feel free to submit issues and enhancement requests!
 
-## Documentation
+## **License**
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
+## **Documentation**
 
 - [**UI Flow Diagram**](docs/UI_Flow_Diagram.png) *(Note: Created using Eraser AI; not fully accurate)*  
 - [**Architecture Overview**](docs/Architecture_Overview.png)  
 - [**Developer Setup Guide**](docs/DEV_SETUP.md)
 
+## **Areas for Improvement (Toward Production Readiness)**
+
+### Architecture & Code Quality
+- Implement comprehensive unit tests and UI tests
+- Add CI/CD pipeline for automated testing and deployment
+- Enhance error handling and logging mechanisms
+- Implement proper dependency injection
+- Add comprehensive code documentation
+- Migrate from `UserDefaults` to CoreData for robust persistence
+
+### Security
+- Implement secure data encryption for financial information
+- Add biometric authentication options
+- Implement proper SSL pinning for future API integrations
+- Add data export security measures
+
+### Performance
+- Optimize chart rendering for large datasets
+- Implement proper caching mechanisms
+- Add performance monitoring for complex calculations
+- Optimize data queries and filters
+
+### Features & UX
+- Add data backup and restore functionality
+- Implement user accounts and cloud sync capabilities
+- Add receipt capture and storage
+- Enhance accessibility features
+- Add localization support for multiple languages and currencies
+- Implement advanced financial insights and predictions
+- Add budget templates and recommendations
+
+### Infrastructure
+- Set up proper monitoring and crash reporting
+- Implement analytics for user behavior tracking
+- Add proper versioning and update mechanism
+- Prepare for App Store submission requirements
+
+## **Author**
+
+Developed by **Eissxs**
+
+## **Acknowledgments**
+
+- Apple SwiftUI Framework
+- Swift Charts
+- UserNotifications Framework
+
 ---
 
-## Author
+*"Track, visualize, and conquer your finances with SpendLog!"* 
 
-Developed by **Eissxs**  
-*“When I wrote this code, only God and I understood what I did. Welp, now only God knows.”*
+---
