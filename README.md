@@ -97,7 +97,6 @@ SpendLog/
 │   │   ├── SpendingSummaryView
 │   │   └── SplashView
 │   ├── Assets
-│   ├── .gitignore
 │   └── SpendLogApp
 ```
 
