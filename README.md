@@ -81,24 +81,24 @@ SpendLog is a minimalist iOS app built with SwiftUI that helps users track daily
 
 ```
 SpendLog/
-├── Views/
-│   ├── DashboardView.swift
-│   ├── ExpenseListView.swift
-│   ├── AddExpenseView.swift
-│   ├── AnalyticsView.swift
-│   └── SettingsView.swift
-├── Models/
-│   ├── Expense.swift
-│   ├── Category.swift
-│   └── Budget.swift
-├── ViewModels/
-│   ├── ExpenseViewModel.swift
-│   ├── AnalyticsViewModel.swift
-│   └── BudgetViewModel.swift
-├── Utilities/
-│   ├── NotificationManager.swift
-│   └── PersistenceManager.swift
-└── Assets.xcassets/
+├── SpendLog/
+│   ├── Models/
+│   │   └── Expense
+│   ├── Resources/
+│   │   └── Colors
+│   ├── ViewModels/
+│   │   └── ExpenseViewModel
+│   ├── Views/
+│   │   ├── AddExpenseView
+│   │   ├── CategoryManagerView
+│   │   ├── EditExpenseView
+│   │   ├── HomeView
+│   │   ├── SpendingPieChartView
+│   │   ├── SpendingSummaryView
+│   │   └── SplashView
+│   ├── Assets
+│   ├── .gitignore
+│   └── SpendLogApp
 ```
 
 ## **Requirements**
